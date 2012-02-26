@@ -1,0 +1,11 @@
+Author : Suharsh Sivakumar
+
+This project is a 4 state cellular automaton, similar to James Conway's Game of Life. But rather than just having one species, it shows the interactions of plants, prey, predators in an environment.
+
+The goals of the project:
+- to learn the ideas of object oriented programming (my first oop)
+- to learn about the function in the opengl library
+- to practice general coding skills
+
+The program used:
+- the opengl library for graphics
