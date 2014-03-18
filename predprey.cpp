@@ -6,9 +6,10 @@
  */
  
 #include "eco.h"
+#include <iostream>
 
 
-int cells_per_side = 500;
+int cells_per_side = 100;
 int delay = 1;
 
 Eco ecosystem(cells_per_side);
@@ -29,11 +30,27 @@ void initFrustum(void) {
   gluOrtho2D(0, ecosystem.getside(), 0, ecosystem.getside());
 }
 
+void speedUp(){
+  if (delay > 10) {
+    delay -= 10;
+  }
+}
+
+void slowDown(){
+  delay += 10;
+}
+
 void keyboard (unsigned char key, int x, int y) {
   // key variable has the key pressed
   switch (key) {
     case 27: exit(0); // exit program when [ESC] key presseed
              break;
+    case 'f': speedUp();
+             break;
+    case 's': slowDown();
+             std::cout << "oink";
+             break;
+    default: break;
   }
 }
 

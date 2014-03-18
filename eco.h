@@ -27,8 +27,6 @@ private:
   enum species {empty = 0, plant = 1, prey = 2, predator = 3}; //how we differentiate from each square
   species * current; // pointer to the array of cells for the current generation
   species * next; // pointer to the array of cells for the next generation
-  void init_current(); // initializes the current[] array using heap memory
-  void init_next(); // initializes the next[] array using heap memory
   int * counts; // Stored as [Predator, prey, plants]
   void count(int curcell); // counts the number of the inputted species in the neighborhood of each cell
     

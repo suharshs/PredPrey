@@ -6,15 +6,7 @@
 */
  
 #include "eco.h"
- 
-// Helper functions in private section
-void Eco::init_current(){  // initializes current
-  current = new species[cells];
-}
-  
-void Eco::init_next(){
-  next = new species[cells]; // initializes next
-}
+
 
 void Eco::initial(){
   if (generation < 1){
@@ -71,9 +63,6 @@ void Eco::count(int curcell) {
   counts[2] = plantcount;
 }
     
-
-
-
 // Member functions in public section
 // Constructor
 Eco::Eco(int input){
@@ -82,8 +71,8 @@ Eco::Eco(int input){
   side = input;
   counts = new int[3];
   cells = side*side;
-  init_current();
-  init_next();
+  current = new species[cells];
+  next = new species[cells];
 }
 
 Eco::Eco(){
@@ -92,8 +81,8 @@ Eco::Eco(){
   side = 100;
   counts = new int[3];
   cells = side*side;
-  init_current();
-  init_next();
+  current = new species[cells];
+  next = new species[cells];
 }
 
 // the display() function displays each individual generation
