@@ -8,7 +8,7 @@
 #include "eco.h"
 
 
-int cells_per_side = 1000;
+int cells_per_side = 500;
 int delay = 1;
 
 Eco ecosystem(cells_per_side);
@@ -36,7 +36,7 @@ void keyboard (unsigned char key, int x, int y) {
              break;
   }
 }
- 
+
  
 int main(int argc, char **argv)
 { 

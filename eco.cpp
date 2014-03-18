@@ -40,38 +40,14 @@ void Eco::count(int curcell) {
   
   //First count will identify the neighbors
   //The first part of this step is to account for the edge cases where the window will wrap around.
-  if (curcell+1 == cells)
-    rightcell = 0;
-  else
-    rightcell = (curcell+1);
-  if (curcell-1 < 0)
-    leftcell = (cells-1);
-  else
-    leftcell = (curcell-1);
-  if (curcell + side >= cells)
-    bottomcell = (curcell-cells+side);
-  else
-    bottomcell = (curcell + side);
-  if (curcell - side < 0)
-    topcell = (cells - side +curcell);
-  else
-    topcell = (curcell - side);
-  if (curcell+side+1 >= cells)
-    bottomrightcell = (curcell-cells+side+1);
-  else
-    bottomrightcell = (curcell + side +1);
-  if (curcell - side + 1 < 0)
-    toprightcell = (cells - side + curcell + 1);
-  else
-    toprightcell = (curcell - side +1);
-  if (curcell+side-1 >= cells)
-    bottomleftcell = (curcell-cells+side-1);
-  else
-    bottomleftcell = (curcell + side -1);
-  if (curcell - side - 1 < 0)
-    topleftcell = (cells - side + curcell - 1);
-  else
-    topleftcell = (curcell - side -1);
+  rightcell = (curcell+1 == cells) ? 0 : (curcell + 1);
+  leftcell = (curcell-1 < 0) ? (cells - 1) : (curcell - 1);
+  bottomcell = (curcell + side >= cells) ? (curcell-cells+side) : (curcell + side);
+  topcell = (curcell - side < 0) ? (cells - side +curcell) : (curcell - side);
+  bottomrightcell = (curcell+side+1 >= cells) ? (curcell-cells+side+1) : (curcell + side +1);
+  toprightcell = (curcell - side + 1 < 0) ? (cells - side + curcell + 1) : (curcell - side +1);
+  bottomleftcell = (curcell+side-1 >= cells) ? (curcell-cells+side-1) : (curcell + side -1);
+  topleftcell = (curcell - side - 1 < 0) ? (cells - side + curcell - 1) : (curcell - side -1);
 
   //calculate prey, pred, and plant count
   int predcount = 0;
@@ -194,15 +170,3 @@ Eco::~Eco(){
   delete [] current;
   delete [] next;
 }
-
-
-
-
-
-
-
-
-
-
-
-
