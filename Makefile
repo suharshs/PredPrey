@@ -3,7 +3,7 @@
 # Date of creation : January 27, 2012
 
 CFLAGS = -c -g -Wall
-LFLAGS = -lopengl32 -lglu32 glut32.lib
+LFLAGS = -framework OpenGL -framework GLUT -framework Cocoa
 
 BINARIES = predprey
 
